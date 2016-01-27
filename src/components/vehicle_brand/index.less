@@ -1,0 +1,58 @@
+.brands {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #f7f7f7;
+  border-radius: 7px;
+  position: relative;
+
+  .brand {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    width: 120px;
+    background: #fbfbfb;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: all .7s;
+    vertical-align: middle;
+    text-align: center;
+
+    &:hover, &.active {
+      background: @blue-sd;
+    }
+
+    img {
+      display: inline-block;
+      width: 90%;
+      height: auto;
+    }
+  }
+  //
+
+  .more {
+    position: absolute;
+    background: @blue-sd;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    right: -40px;
+    margin-top: -40px;
+    top: 50%;
+    color: #fff;
+    line-height: 100%;
+    font-family: "BebasNeueRegular", Helvetica, Arial, sans-serif;
+    padding-top: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .4s;
+
+    .span {
+      font-size: 59px;
+      line-height: 27px;
+    }
+
+    &:hover {
+      box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    }
+  }
+}

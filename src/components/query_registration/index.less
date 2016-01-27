@@ -1,0 +1,58 @@
+#query-registration {
+  .message {
+    font-size: 70px;
+    line-height: 100%;
+    font-family: BebasNeueRegular, Helvetica, Arial, sans-serif;;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  .vehicle_registration {
+    color: #999;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    width: 200px;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-family: BebasNeueRegular, Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    background: #fff;
+    text-transform: uppercase;
+
+    &:focus{
+      color:#777;
+    }
+  }
+
+  .small {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: @screen-sm-max) {
+    .message {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .form-registration {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: @screen-xs-max) {
+    .vehicle_registration {
+      font-size: 30px;
+    }
+  }
+}
