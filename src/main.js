@@ -89,5 +89,5 @@ let routes = (
 );
 
 Router.run(routes, (Handler) => {
-    React.render(<Handler/>, document.getElementById('app'))
+    React.render(<Handler/>, document.getElementById('content'))
 })
