@@ -18,7 +18,6 @@ module.exports = {
 	output: {
 		path: PATHS.build,
 		filename: 'bundle.js',
-		publicPath: 'http://localhost:5000/'
 	},
 
 	// For joi libs
@@ -40,13 +39,11 @@ module.exports = {
 			},
 
 			// BOOTSTRAP && OUR FONTS
-			{ test: /\.(ttf|eot|svg|woff|woff2?)(\?[a-z0-9]+)?$/, loader : 'url?limit=100000' },
+			{ test: /\.(ttf|eot|svg|woff|woff2?)(\?[a-z0-9]+)?$/, loader : 'file-loader' },
 
 			{ test: /\.(ttf|eot|svg|woff|woff2)?$/, loader : 'file-loader' },
 
 			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
-
-			{ test: /\.ttf(\?-[a-z0-9]+)?$/, loader: "url?limit=100000&mimetype=application/font-ttf" }, 
 
 			{ test: /\.eot(\?\#[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
 
