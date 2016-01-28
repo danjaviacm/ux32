@@ -67,7 +67,8 @@ module.exports = {
 
 	plugins: [
 		new OpenBrowserPlugin({ url: 'http://localhost:5000' }),
-		new ExtractTextPlugin('styles.css')
+		new ExtractTextPlugin( "./css/[name].css" )
+
 	]
 	
 };
