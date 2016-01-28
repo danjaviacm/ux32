@@ -19,6 +19,13 @@ module.exports = {
 		filename: 'bundle.js',
 	},
 
+	// For joi libs
+	node: {
+      net: 'empty',
+      tls: 'empty',
+      dns: 'empty'
+    },
+
 	module: {
 		loaders: [
 			{

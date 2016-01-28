@@ -267,7 +267,7 @@ let DateOfBirth = React.createClass({
             all_values.push(i)
         }
         //all_values.push('Año')
-        this.setState({years: all_values})
+        this.setState({ years: all_values })
     },
 
     reverse(a, b) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { default  as Router, Route, NotFoundRoute, Redirect, RouteHandler, Link} from 'react-router'
+import { default  as Router, Route, NotFoundRoute, Redirect, RouteHandler, Link } from 'react-router'
 import Resize from './resize'
 
 
