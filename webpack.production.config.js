@@ -64,7 +64,13 @@ module.exports = {
 			{ test: /\.(png|jpg)$/, loader: 'url?limit=25000' },
 
 			// LESS
-            { test: /\.less$/, loader: "style!css!less" },
+            // { test: /\.less$/, loader: "style!css!less" },
+            
+            { test: /\.less$/, loader: ExtractTextPlugin.extract(
+                    // activate source maps via loader query
+                    'css?sourceMap!' +
+                    'less?sourceMap'
+                ) },
 
 			// SASS
 			{ test: /\.scss$/, loader: 'style!css!sass'	}
@@ -82,6 +88,6 @@ module.exports = {
                 '*.txt'
             ]
         }),
-		new ExtractTextPlugin('styles.css')
+		new ExtractTextPlugin( "./css/[name].css" )
     ]
 };
