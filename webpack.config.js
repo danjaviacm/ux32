@@ -16,6 +16,7 @@ module.exports = {
 	output: {
 		path: PATHS.build,
 		filename: 'bundle.js',
+		publicPath: 'http://localhost:5000/'
 	},
 
 	// For joi libs
@@ -41,11 +42,11 @@ module.exports = {
 
 			{ test: /\.(ttf|eot|svg|woff|woff2)?$/, loader : 'file-loader' },
 
-			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "file" }, 
+			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
 
-			{ test: /\.eot(\?\#[a-z0-9]+)?$/, loader: "file" }, 
+			{ test: /\.eot(\?\#[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
 
-			{ test: /\.svg(\?\#[a-z0-9]+)?$/, loader: "file" }, 
+			{ test: /\.svg(\?\#[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
 
 			// FONT AWESOME FONTS
 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" }, 
@@ -54,7 +55,7 @@ module.exports = {
 
 			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" }, 
 
-			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" }, 
+			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=100000" }, 
 
 			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" },
 
