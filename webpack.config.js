@@ -15,8 +15,7 @@ module.exports = {
 
 	output: {
 		path: PATHS.build,
-		filename: 'bundle.js',
-		publicPath: 'http://localhost:5000/'
+		filename: 'bundle.js'
 	},
 
 	// For joi libs
@@ -63,13 +62,13 @@ module.exports = {
 			{ test: /\.(png|jpg)$/, loader: 'url?limit=25000' },
 
 			// LESS
-            // { test: /\.less$/, loader: "style!css!less" },
-            
-            { test: /\.less$/, loader: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'less?sourceMap'
-                ) },
+            { test: /\.less$/, loader: "style!css!less" },
+
+            // { test: /\.less$/, loader: ExtractTextPlugin.extract(
+            //         // activate source maps via loader query
+            //         'css?sourceMap!' +
+            //         'less?sourceMap'
+            //     ) },
 
 			// SASS
 			{ test: /\.scss$/, loader: 'style!css!sass'	}
@@ -78,7 +77,7 @@ module.exports = {
 
 	plugins: [
 		new OpenBrowserPlugin({ url: 'http://localhost:5000' }),
-		new ExtractTextPlugin( "./css/[name].css" )
+		// new ExtractTextPlugin( "./css/[name].css" )
 
 	]
 	
