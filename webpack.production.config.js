@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const node_modules = path.resolve( __dirname, 'node_modules' );
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
 	app: path.resolve(__dirname, 'src/main.js' ),
@@ -29,7 +30,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?$/,
+				test: /\.(jsx|es6|js)?$/,
 				exclude: /(node_modules|bower_components)/,
 				loader: 'babel', // 'babel-loader' is also a legal name to reference
 				query: {
@@ -67,14 +68,14 @@ module.exports = {
 	plugins: [
         new CopyWebpackPlugin([
         
-            { from: PATHS.main, to: PATHS.index },
-            { from: PATHS.componentsPath, to: 'components' },
+            { from: PATHS.main, to: PATHS.index }
 
         ], {
             ignore: [
                 // Doesn't copy any files with a txt extension     
                 '*.txt'
             ]
-        })
+        }),
+		new ExtractTextPlugin('styles.css')
     ]
 };

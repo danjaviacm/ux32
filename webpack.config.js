@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const node_modules = path.resolve( __dirname, 'node_modules' );
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require( "webpack" );
 
 const PATHS = {
@@ -27,7 +28,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx?$/,
+				test: /\.(jsx|es6|js)?$/,
 				exclude: /(node_modules|bower_components)/,
 				loader: 'babel', // 'babel-loader' is also a legal name to reference
 				query: {
@@ -65,7 +66,8 @@ module.exports = {
 	},
 
 	plugins: [
-		new OpenBrowserPlugin({ url: 'http://localhost:5000' })
+		new OpenBrowserPlugin({ url: 'http://localhost:5000' }),
+		new ExtractTextPlugin('styles.css')
 	]
 	
 };
