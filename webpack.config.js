@@ -43,6 +43,10 @@ module.exports = {
 
 			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "file" }, 
 
+			{ test: /\.eot(\?\#[a-z0-9]+)?$/, loader: "file" }, 
+
+			{ test: /\.svg(\?\#[a-z0-9]+)?$/, loader: "file" }, 
+
 			// FONT AWESOME FONTS
 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" }, 
 
