@@ -18,6 +18,7 @@ module.exports = {
 	output: {
 		path: PATHS.build,
 		filename: 'bundle.js',
+		publicPath: 'http://localhost:5000/'
 	},
 
 	// For joi libs
