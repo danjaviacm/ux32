@@ -27,14 +27,6 @@ let QueryRegistration = React.createClass({
         }
     },
 
-    /*componentWillMount() {
-     Raven.config('https://a9c5bab656554a52b0808d84cb482a56@app.getsentry.com/20142', {
-     // we highly recommend restricting exceptions to a domain in order to filter out clutter
-     whitelistUrls: ['seguros.comparamejor.com/'],
-     }).install();
-     Raven.captureMessage(new Error('Whoops!'))
-     },*/
-
     validatorTypes: {
         vehicle_registration: Joi.string().alphanum().min(6).max(6).required()
         // vehicle_registration: Joi.string().regex(/^[A-Za-z]{3}[\d]{2,3}$/).min(5).max(6).required()

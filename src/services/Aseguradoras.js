@@ -1,5 +1,6 @@
 let aseguradoras =  [
     {
+
         insurance_company_code: "PREVISORA",
         logo: "/media/uploads/aseguradoras/la-previsora.png",
         default: true,
@@ -17,7 +18,6 @@ let aseguradoras =  [
         default: true,
         error: true
     },
-
     {
         insurance_company_code: "ALLIANZ",
         logo: "/media/uploads/aseguradoras/allianz-v2.png",
@@ -39,6 +39,12 @@ let aseguradoras =  [
     {
         insurance_company_code: "AIG",
         logo: "/media/uploads/aseguradoras/AIG_logo.png",
+        default: true,
+        error: true
+    },
+    {
+        insurance_company_code: "LIBERTY",
+        logo: "/media/uploads/aseguradoras/liberty.png",
         default: true,
         error: true
     }

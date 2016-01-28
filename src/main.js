@@ -37,6 +37,8 @@ import ClaimHistory from './components/claim_history'
 import WhenNeedPolicy from './components/when_need_policy'
 import NotFound from './components/notfound'
 
+import styles from './styles/main.less'
+
 /*
  * Base UJ UX3.1 ReactJS <3 :3
  * */
