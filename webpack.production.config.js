@@ -39,15 +39,9 @@ module.exports = {
 			},
 
 			// BOOTSTRAP && OUR FONTS
-			{ test: /\.(ttf|eot|svg|woff|woff2?)(\?[a-z0-9]+)?$/, loader : 'file-loader' },
+			{ test: /\.(ttf|eot|svg|woff|woff2?)(\?[a-z0-9]+)?$/, loader : 'file-loader?name=[name]-[hash].[ext]' },
 
-			{ test: /\.(ttf|eot|svg|woff|woff2)?$/, loader : 'file-loader' },
-
-			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
-
-			{ test: /\.eot(\?\#[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
-
-			{ test: /\.svg(\?\#[a-z0-9]+)?$/, loader: "url?limit=100000" }, 
+			{ test: /\.eot(\?-[a-z0-9]+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" }, 
 
 			// FONT AWESOME FONTS
 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" }, 
@@ -64,13 +58,9 @@ module.exports = {
 			{ test: /\.(png|jpg)$/, loader: 'url?limit=25000' },
 
 			// LESS
-            { test: /\.less$/, loader: "style!css!less" },
-            
-            // { test: /\.less$/, loader: ExtractTextPlugin.extract(
-            //         // activate source maps via loader query
-            //         'css?sourceMap!' +
-            //         'less?sourceMap'
-            //     ) },
+            // { test: /\.less$/, loader: "style!css!less" },
+
+            { test: /\.less$/, loader: ExtractTextPlugin.extract("css-loader!autoprefixer-loader!less-loader")},
 
 			// SASS
 			{ test: /\.scss$/, loader: 'style!css!sass'	}
@@ -90,6 +80,6 @@ module.exports = {
                 '*.txt'
             ]
         }),
-		// new ExtractTextPlugin( "./css/[name].css" )
+		new ExtractTextPlugin( "./[name].css" )
     ]
 };
