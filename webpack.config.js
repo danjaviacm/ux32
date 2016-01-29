@@ -3,10 +3,12 @@ const node_modules = path.resolve( __dirname, 'node_modules' );
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require( "webpack" );
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
 	app: path.resolve(__dirname, 'src/main.js' ),
-	build: path.resolve(__dirname, 'build' )
+	build: path.resolve(__dirname, 'build' ),
+	fonts: path.resolve(__dirname, 'src/fonts')
 };
 
 module.exports = {
@@ -76,6 +78,18 @@ module.exports = {
 	},
 
 	plugins: [
+
+        new CopyWebpackPlugin([
+        	
+            { from: PATHS.fonts, to: 'fonts' }
+
+        ], {
+            ignore: [
+                // Doesn't copy any files with a txt extension     
+                '*.txt'
+            ]
+        }),
+
 		new OpenBrowserPlugin({ url: 'http://localhost:5000' }),
 		// new ExtractTextPlugin( "./css/[name].css" )
 

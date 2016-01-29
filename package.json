@@ -49,6 +49,7 @@
     "numeral": "^1.5.3",
     "path": "^0.12.7",
     "pinkie-promise": "^1.0.0",
+    "psi": "^1.0.6",
     "pusher-js": "^3.0.0",
     "raven-js": "^1.1.19",
     "react": "^0.13.3",

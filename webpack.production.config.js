@@ -8,7 +8,7 @@ const PATHS = {
 	build: path.resolve(__dirname, 'dist' ),
 	main: path.resolve(__dirname, 'build/index.html' ),
 	index: path.resolve(__dirname, 'index.html' ),
-	componentsPath: path.resolve(__dirname, 'src/components' )
+	fonts: path.resolve(__dirname, 'src/fonts')
 };
 
 module.exports = {
@@ -64,13 +64,13 @@ module.exports = {
 			{ test: /\.(png|jpg)$/, loader: 'url?limit=25000' },
 
 			// LESS
-            // { test: /\.less$/, loader: "style!css!less" },
+            { test: /\.less$/, loader: "style!css!less" },
             
-            { test: /\.less$/, loader: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'less?sourceMap'
-                ) },
+            // { test: /\.less$/, loader: ExtractTextPlugin.extract(
+            //         // activate source maps via loader query
+            //         'css?sourceMap!' +
+            //         'less?sourceMap'
+            //     ) },
 
 			// SASS
 			{ test: /\.scss$/, loader: 'style!css!sass'	}
@@ -80,7 +80,9 @@ module.exports = {
 	plugins: [
         new CopyWebpackPlugin([
         
-            { from: PATHS.main, to: PATHS.index }
+            { from: PATHS.main, to: PATHS.index },
+
+            { from: PATHS.fonts, to: 'fonts' }
 
         ], {
             ignore: [
@@ -88,6 +90,6 @@ module.exports = {
                 '*.txt'
             ]
         }),
-		new ExtractTextPlugin( "./css/[name].css" )
+		// new ExtractTextPlugin( "./css/[name].css" )
     ]
 };
