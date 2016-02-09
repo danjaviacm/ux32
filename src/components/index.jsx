@@ -40,7 +40,7 @@ import NotFound from './notfound'
 /*
  * Base UJ UX3.1 ReactJS <3 :3
  * */
-let App = React.createClass({
+const App = React.createClass({
     mixins: [Router.State],
 
     render() {
@@ -59,7 +59,7 @@ let App = React.createClass({
     }
 })
 
-let routes = (
+const routes = (
     <Route>
         <Redirect from="/" to="query"/>
         <Route handler={App}>

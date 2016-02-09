@@ -10,7 +10,7 @@ import ProgressBar from '../progress_bar'
 import $ from 'jquery'
 import EventTrackingMixin from '../../mixins/EventTrackingMixin'
 
-let IdentificationType = React.createClass({
+const IdentificationType = React.createClass({
     mixins: [ValidationMixin, Router.Navigation, React.addons.LinkedStateMixin, EventTrackingMixin],
     isActive(key, valueOf, classes) {
         //
